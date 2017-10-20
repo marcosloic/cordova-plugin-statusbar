@@ -311,22 +311,12 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
 
 - (void) styleBlackTranslucent:(CDVInvokedUrlCommand*)command
 {
-    #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
-    # define TRANSLUCENT_STYLE UIStatusBarStyleBlackTranslucent
-    #else
-    # define TRANSLUCENT_STYLE UIStatusBarStyleLightContent
-    #endif
-    [self setStyleForStatusBar:TRANSLUCENT_STYLE];
+    [self setStyleForStatusBar:UIStatusBarStyleDefault];
 }
 
 - (void) styleBlackOpaque:(CDVInvokedUrlCommand*)command
 {
-    #if __IPHONE_OS_VERSION_MAX_ALLOWED < 70000
-    # define OPAQUE_STYLE UIStatusBarStyleBlackOpaque
-    #else
-    # define OPAQUE_STYLE UIStatusBarStyleLightContent
-    #endif
-    [self setStyleForStatusBar:OPAQUE_STYLE];
+    [self setStyleForStatusBar:UIStatusBarStyleDefault];
 }
 
 - (void) backgroundColorByName:(CDVInvokedUrlCommand*)command
